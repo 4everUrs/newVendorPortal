@@ -43,7 +43,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{route('cart')}}">
                                 <i class="nc-icon nc-diamond"></i>
                                 <p>Cart</p>
                             </a>

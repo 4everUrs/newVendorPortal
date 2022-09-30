@@ -56,7 +56,7 @@
                         <li class="dropdown"><a href="{{route('dashboard')}}"><span>Dashboard</span></a></li>
                     @endauth
                     <li class="dropdown"><a href="#"><span>About</span></a></li>
-                    <li><a class="nav-link scrollto" href="#services">Listing</a></li>
+                    <li><a class="nav-link scrollto" href="{{route('posting')}}">Listing</a></li>
                     <li><a class="nav-link scrollto " href="{{route('shop')}}">Shop</a></li>
                     @guest
                         <form action="{{route('login')}}">
