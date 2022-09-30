@@ -57,7 +57,7 @@
                                 </div>
                             </div>
                             <div class="form-group d-md-flex">
-                                <p>Don't have an account yet? <a href="#">Create Here.</a></p>
+                                <p>Don't have an account yet? <a href="{{route('register')}}">Create Here.</a></p>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary rounded submit p-3 px-5">LOGIN</button>
