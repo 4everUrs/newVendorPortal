@@ -7,23 +7,39 @@
 
     <section class="w-100 mt-5">
         <div class="container">
-            <div class="job-box d-md-flex align-items-center justify-content-between mb-30">
-                <div class="job-left my-4 d-md-flex align-items-center flex-wrap">
-                    <div class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex"> FD</div>
-                    <div class="job-content">
-                        <h5 class="text-center text-md-left">Front End Developer</h5>
-                        <ul class="d-md-flex flex-wrap text-capitalize ff-open-sans">
-                            <li class="mr-md-4"><i class="zmdi zmdi-pin mr-2"></i> Los Angeles</li>
-                            <li class="mr-md-4"> <i class="zmdi zmdi-money mr-2"></i> 2500-3500/pm</li>
-                            <li class="mr-md-4"> <i class="zmdi zmdi-time mr-2"></i> Full Time</li>
-                        </ul>
+            <div class="row">
+                    <div class="col-lg-10 mx-auto mb-4">
+                    <div class="text-center">
+                        <h1>Grow your career with us</h1>
+                        <p>Lorem ipsum dolor sit detudzdae amet, rcquisc adipiscing elit. Aenean socada commodo
+                            ligaui egets dolor. Nullam quis ante tiam sit ame orci eget erovtiu faucid.</p>
                     </div>
                 </div>
-                <div class="job-right my-4 flex-shrink-0"> 
-                    <a href="#" class="btn d-block w-100 d-sm-inline-block btn-light">Apply now</a>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="row p-3 rounded bg-light d-flex align-items-center">
+                        <div class="col-8">
+                            <div class="d-flex align-items-center flex-nowrap justify-content-start">
+                                <img src="{{asset('dashboardPage/assets/img/logz.png')}}" class="rounded-circle d-block" width="100" height="100">
+                                <div class="ps-4">
+                                    <h3>Looking for: Supplier</h3>
+                                    <p>Lorem ipsum dolor sit detudzdae amet, rcquisc adipiscing elit. Aenean socada commodo
+                                        ligaui egets dolor</p>
+                                    <div class="d-flex align-items-center flex-wrap justify-content-start gap-3">
+                                        <div><i class="fa-solid fa-location-dot"></i> Department</div>
+                                        <div><i class="fa-solid fa-dollar-sign"></i> Price Range</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 text-end m-n1">
+                            <a class="d-inline-block px-4 py-2 rounded bg-secondary text-white align-middle m-1" href="{{route('view')}}">Apply</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    
 </div>

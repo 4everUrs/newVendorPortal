@@ -4,8 +4,7 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    
     <div class="container">
     <table id="cart" class="table table-hover table-condensed">
         <thead>

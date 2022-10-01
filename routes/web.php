@@ -5,6 +5,7 @@ use App\Http\Livewire\Shop;
 use App\Http\Livewire\Content;
 use App\Http\Livewire\Cart;
 use App\Http\Livewire\Posting;
+use App\Http\Livewire\View;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,7 @@ Route::get('shop',Shop::class)->name('shop');
 Route::get('home',Content::class)->name('home');
 Route::get('cart',Cart::class)->name('cart');
 Route::get('posting',Posting::class)->name('posting');
+Route::get('view',View::class)->name('view');
 
 Route::middleware([
     'auth:sanctum',

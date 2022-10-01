@@ -29,6 +29,9 @@
     <!-- Template Main CSS File -->
     <link href="{{asset('welcomePage/assets/css/style.css')}}" rel="stylesheet">
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- =======================================================
   * Template Name: Scaffold - v4.9.0
   * Template URL: https://bootstrapmade.com/scaffold-bootstrap-metro-style-template/
@@ -41,7 +44,7 @@
 
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top d-flex align-items-center">
-        <div class="container d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
 
             <div class="logo me-auto">
                 {{-- <h1><a href="index.html">Scaffold</a></h1> --}}
