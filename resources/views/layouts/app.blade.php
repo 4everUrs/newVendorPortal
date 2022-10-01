@@ -50,7 +50,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:;">
+                            <a href="{{route('record')}}">
                                 <i class="nc-icon nc-pin-3"></i>
                                 <p>Purchase Orders</p>
                             </a>
