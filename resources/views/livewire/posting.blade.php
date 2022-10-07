@@ -25,7 +25,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <h3>Looking for: Supplier</h3>
-                                            <p>Lorem ipsum dolor sit detudzdae amet, rcquisc adipiscing elit. Aenean socada commodo ligaui egets dolor</p>
+                                            <p>Lorem ipsum dolor sit detu dzdae amet, rcquisc adipiscing elit. Aenean socada commodo ligaui egets dolor</p>
                                             <div class="d-flex align-items-center flex-wrap justify-content-start gap-3">
                                                 <div><i class="fa-solid fa-location-dot"></i> Department</div>
                                                 <div><i class="fa-solid fa-dollar-sign"></i> Price Range</div>
