@@ -17,7 +17,8 @@
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+       
     <!-- Vendor CSS Files -->
     <link href="{{asset('welcomePage/assets/vendor/aos/aos.css')}}" rel="stylesheet">
     <link href="{{asset('welcomePage/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -32,12 +33,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- =======================================================
-  * Template Name: Scaffold - v4.9.0
-  * Template URL: https://bootstrapmade.com/scaffold-bootstrap-metro-style-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  @livewireStyles
+  
 </head>
 
 <body>
@@ -47,8 +44,7 @@
         <div class="container d-flex align-items-center justify-content-between">
 
             <div class="logo me-auto">
-                {{-- <h1><a href="index.html">Scaffold</a></h1> --}}
-                <!-- Uncomment below if you prefer to use an image logo -->
+
                 <a href="index.html"><img src="{{asset('welcomePage/assets/img/logo-full.png')}}" alt="" class="img-fluid"></a>
             </div>
 
@@ -67,54 +63,17 @@
                         </form>
                     @endguest
                     @auth
-                    <x-jet-dropdown id="settingsDropdown">
-                        <x-slot name="trigger">
-                            @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                            <img class="rounded-circle" width="32" height="32" src="{{ Auth::user()->profile_photo_url }}"
-                                alt="{{ Auth::user()->name }}" />
-                            @else
-                            {{ Auth::user()->name }}
-                    
-                            <svg class="ms-2" width="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd"
-                                    d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            @endif
-                        </x-slot>
-                    
-                        <x-slot name="content">
-                            <!-- Account Management -->
-                            <h6 class="dropdown-header small text-muted">
-                                {{ __('Manage Account') }}
-                            </h6>
-                    
-                            <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                                {{ __('Profile') }}
-                            </x-jet-dropdown-link>
-                    
-                            @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                            <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
-                                {{ __('API Tokens') }}
-                            </x-jet-dropdown-link>
-                            @endif
-                    
-                            <hr class="dropdown-divider">
-                    
-                            <!-- Authentication -->
-                            <x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                             document.getElementById('logout-form').submit();">
-                                {{ __('Log out') }}
-                            </x-jet-dropdown-link>
-                            <form method="POST" id="logout-form" action="{{ route('logout') }}">
-                                @csrf
-                            </form>
-                        </x-slot>
-                    </x-jet-dropdown>
+                    <li class="nav-item btn-rotate">
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                                    document.getElementById('logout-form').submit();"
+                            class="nav-link">Logout</a>
+                        <form method="POST" id="logout-form" action="{{ route('logout') }}">
+                            @csrf
+                        </form>
+                    </li>
                     @endauth
                    
                 </ul>
-                
                 
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
@@ -122,9 +81,16 @@
 
         </div>
     </header><!-- End Header -->
-
-    {{$slot}}
-
+    <div class="main-content">
+        {{$slot}}
+    </div>
+    @include('sweetalert::alert')
+    @stack('modals')
+    
+    @livewireScripts
+    
+    @stack('scripts')
+    <script src="{{ mix('js/app.js') }}" defer></script>
     <!-- ======= Footer ======= -->
     <footer id="footer">
         <div class="container">
@@ -145,7 +111,10 @@
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
-
+            
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>   
     <!-- Vendor JS Files -->
     <script src="{{asset('welcomePage/assets/vendor/aos/aos.js')}}"></script>
     <script src="{{asset('welcomePage/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

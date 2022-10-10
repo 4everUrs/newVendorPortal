@@ -9,7 +9,6 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
@@ -37,7 +36,7 @@
                 </div>
                 <div class="sidebar-wrapper">
                     <ul class="nav">
-                        <li class="active ">
+                        <li>
                             <a href="{{route('dashboard')}}">
                                 <i class="nc-icon nc-tile-56"></i>
                                 <p>Dashboard</p>
@@ -47,6 +46,12 @@
                             <a href="{{route('cart')}}">
                                 <i class="nc-icon nc-diamond"></i>
                                 <p>Cart</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('orders')}}">
+                                <i class="nc-icon nc-diamond"></i>
+                                <p>Orders</p>
                             </a>
                         </li>
                         <li>
@@ -111,12 +116,13 @@
         
             </div>
         </div>
-
+        @include('sweetalert::alert')
         @stack('modals')
 
         @livewireScripts
 
         @stack('scripts')
+
         <script src="{{asset('dashboardPage/assets/js/core/jquery.min.js')}}"></script>
         <script src="{{asset('dashboardPage/assets/js/core/popper.min.js')}}"></script>
         <script src="{{asset('dashboardPage/assets/js/core/bootstrap.min.js')}}"></script>

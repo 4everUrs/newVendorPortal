@@ -5,40 +5,39 @@
         </h2>
     </x-slot>
 
-    <section class="w-100 mt-5">
+    <section class="w-100 mt-5" style="background-image: url({{asset('dashboardPage/assets/img/bg.png')}})">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 mx-auto">
                     <div class="text-center mb-5">
                         <h1>Grow your career with us</h1>
-                        <p>Lorem ipsum dolor sit detudzdae amet, rcquisc adipiscing elit. Aenean socada commodo
-                            ligaui egets dolor. Nullam quis ante tiam sit ame orci eget erovtiu faucid.</p>
+                        <p>Tech-Trendz Service is company that give people job that their deserve.</p>
                     </div>
 
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td style="width: 100px;">
-                                    <img src="{{asset('dashboardPage/assets/img/logz.png')}}" class="rounded-circle d-block" width="100" height="100">
-                                </td>
-                                <td style="width: 100%;" class="ps-5 pe-4">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h3>Looking for: Supplier</h3>
-                                            <p>Lorem ipsum dolor sit detudzdae amet, rcquisc adipiscing elit. Aenean socada commodo ligaui egets dolor</p>
-                                            <div class="d-flex align-items-center flex-wrap justify-content-start gap-3">
-                                                <div><i class="fa-solid fa-location-dot"></i> Department</div>
-                                                <div><i class="fa-solid fa-dollar-sign"></i> Price Range</div>
-                                            </div>
+                    @foreach ($posts as $post)
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <table class="table">
+                                <tr>
+                                    <td style="width: 10%">
+                                        <img src="{{asset('dashboardPage/assets/img/logz.png')}}" class="rounded-circle d-block" width="100" height="100">
+                                    </td>
+                                    <td>
+                                        <h3>Looking for: {{$post->type}}</h3>
+                                        <p>{{$post->description}}</p>
+                                        <div class="d-flex align-items-center flex-wrap justify-content-start gap-3 ">
+                                            <div><i class="fa-solid fa-location-dot"></i> {{$post->location}}</div>
+                                            <div><i class="fa-solid fa-dollar-sign"></i> @money($post->start) - @money($post->end)</div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td style="width: 90px">
-                                    <a class="d-block px-4 py-2 rounded bg-secondary text-white align-middle" href="{{route('view')}}">Apply</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                    </td>
+                                    <td class="text-center align-middle">
+                                        <button class="btn btn-dark" wire:click="apply({{$post->id}})">View</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
