@@ -14,10 +14,12 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
         {{-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet"> --}}
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css">
         <!-- CSS Files -->
         <link href="{{asset('dashboardPage/assets/css/bootstrap.min.css')}}" rel="stylesheet" />
-        <link href="{{asset('dashboardPage/assets/css/paper-dashboard.css?v=2.0.1')}}" rel="stylesheet" />
+        <link href="{{asset('dashboardPage/assets/css/paper-dashboard.css')}}" rel="stylesheet" />
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css" integrity="sha256-8g4waLJVanZaKB04tvyhKu2CZges6pA5SUelZAux/1U=" crossorigin="anonymous">
 
         @livewireStyles
 
