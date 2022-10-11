@@ -28,16 +28,21 @@
                         <div class="alert alert-success mb-3 rounded-0" role="alert">
                             {{ session('status') }}
                         </div>
+                        
+                        @endif
+                        @if($errors->any())
+                        <div class="alert alert-danger mb-3 rounded-0" role="alert">
+                            {{$errors->first()}}
+                        </div>
+                        
                         @endif
                         <form action="{{ route('login') }}" method="POST" class="login-form">
                             @csrf
                             <div class="form-group">
-                                <x-jet-label>Username</x-jet-label>
                                 <x-jet-input class="{{ $errors->has('username') ? 'is-invalid' : '' }}" type="username" name="username" :value="old('username')"
                                     required />
                                 <x-jet-input-error for="username"></x-jet-input-error>
                             </div>
-                            <x-jet-label>Password</x-jet-label>
                             <div class="form-group d-flex">
                                 <x-jet-input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" type="password" name="password"
                                     required autocomplete="current-password" />

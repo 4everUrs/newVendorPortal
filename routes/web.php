@@ -1,6 +1,7 @@
 <?php
 
 use App\Actions\Fortify\CreateNewUser;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterUserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Disposal;
@@ -27,7 +28,9 @@ use Carbon\Carbon;
 
 Route::get('/', function () {
     return redirect('/home');
-})->name('home');
+});
+
+Route::get('/redirects', [LoginController::class, 'login']);
 
 Route::get('shop', Disposal::class)->name('shop');
 Route::get('home', Content::class)->name('home');

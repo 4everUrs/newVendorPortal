@@ -60,8 +60,7 @@
                                 <x-jet-input class="form-control" type="password" name="password_confirmation" required
                                     autocomplete="new-password" />
                             </div>
-                            <input type="hidden" name="current_team_id" value="38">
-                            <input type="hidden" name="role_id" value="3">
+                            
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary rounded submit p-3 px-5">REGISTER</button>
                             </div>

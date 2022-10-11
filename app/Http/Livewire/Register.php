@@ -30,8 +30,8 @@ class Register extends Component
         $data->username = $request->username;
         $data->phone = $request->phone;
         $data->password = Hash::make($request->password);
-        $data->current_team_id = $request->current_team_id;
-        $data->role_id = $request->role_id;
+        $data->current_team_id = '38';
+        $data->role_id = '3';
         $data->save();
         toastr()->addSuccess('Account Register Successfully');
         return redirect()->route('login');
