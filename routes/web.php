@@ -9,6 +9,7 @@ use App\Http\Livewire\View;
 use App\Http\Livewire\Record;
 use App\Http\Livewire\Application;
 use App\Http\Livewire\Orders;
+use Carbon\Carbon;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,10 @@ Route::get('/', function () {
     return redirect('/home');
 });
 
-
+Route::get('time', function () {
+    $dt = new Carbon;
+    echo $dt->format('H:i:s');
+});
 
 
 Route::get('shop', Disposal::class)->name('shop');
