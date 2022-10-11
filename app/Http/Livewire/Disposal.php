@@ -56,7 +56,7 @@ class Disposal extends Component
             'qty' => '1',
             'subtotal' => $item->amount,
         ]);
-        sweetalert()->addInfo('Add to Cart Successfully');
+        sweetalert()->addSuccess('Add to Cart Successfully');
         $this->viewItem = false;
     }
 }

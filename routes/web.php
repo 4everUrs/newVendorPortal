@@ -1,5 +1,7 @@
 <?php
 
+use App\Actions\Fortify\CreateNewUser;
+use App\Http\Controllers\RegisterUserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Disposal;
 use App\Http\Livewire\Content;
@@ -9,6 +11,7 @@ use App\Http\Livewire\View;
 use App\Http\Livewire\Record;
 use App\Http\Livewire\Application;
 use App\Http\Livewire\Orders;
+use App\Http\Livewire\Register;
 use Carbon\Carbon;
 
 /*
@@ -24,22 +27,15 @@ use Carbon\Carbon;
 
 Route::get('/', function () {
     return redirect('/home');
-});
-
-Route::get('time', function () {
-    $dt = new Carbon;
-    echo $dt->format('H:i:s');
-});
-
+})->name('home');
 
 Route::get('shop', Disposal::class)->name('shop');
 Route::get('home', Content::class)->name('home');
-Route::get('cart', Cart::class)->name('cart');
-Route::get('orders', Orders::class)->name('orders');
 Route::get('posting', Posting::class)->name('posting');
 Route::get('view/{list}/{id}', View::class)->name('view');
-Route::get('record', Record::class)->name('record');
 
+Route::get('signup', Register::class)->name('signup');
+Route::post('create', [Register::class, 'create'])->name('create');
 
 Route::middleware([
     'auth:sanctum',
@@ -50,4 +46,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
     Route::get('apply{id}/{list}', Application::class)->name('apply');
+    Route::get('cart', Cart::class)->name('cart');
+    Route::get('orders', Orders::class)->name('orders');
+    Route::get('record', Record::class)->name('record');
 });

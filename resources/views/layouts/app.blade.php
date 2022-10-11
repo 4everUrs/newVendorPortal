@@ -118,6 +118,7 @@
         
             </div>
         </div>
+        
         @include('sweetalert::alert')
         @stack('modals')
 
@@ -126,6 +127,7 @@
         @stack('scripts')
 
         <script src="{{asset('dashboardPage/assets/js/core/jquery.min.js')}}"></script>
+       
         <script src="{{asset('dashboardPage/assets/js/core/popper.min.js')}}"></script>
         <script src="{{asset('dashboardPage/assets/js/core/bootstrap.min.js')}}"></script>
         <script src="{{asset('dashboardPage/assets/js/plugins/perfect-scrollbar.jquery.min.js')}}"></script>

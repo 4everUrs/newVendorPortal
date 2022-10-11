@@ -32,10 +32,12 @@
                         <form action="{{ route('login') }}" method="POST" class="login-form">
                             @csrf
                             <div class="form-group">
-                                <x-jet-input class="{{ $errors->has('email') ? 'is-invalid' : '' }}" type="email" name="email" :value="old('email')"
+                                <x-jet-label>Username</x-jet-label>
+                                <x-jet-input class="{{ $errors->has('username') ? 'is-invalid' : '' }}" type="username" name="username" :value="old('username')"
                                     required />
-                                <x-jet-input-error for="email"></x-jet-input-error>
+                                <x-jet-input-error for="username"></x-jet-input-error>
                             </div>
+                            <x-jet-label>Password</x-jet-label>
                             <div class="form-group d-flex">
                                 <x-jet-input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" type="password" name="password"
                                     required autocomplete="current-password" />
@@ -57,7 +59,7 @@
                                 </div>
                             </div>
                             <div class="form-group d-md-flex">
-                                <p>Don't have an account yet? <a href="{{route('register')}}">Create Here.</a></p>
+                                <p>Don't have an account yet? <a href="{{route('signup')}}">Create Here.</a></p>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary rounded submit p-3 px-5">LOGIN</button>

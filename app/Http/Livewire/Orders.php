@@ -17,17 +17,24 @@ class Orders extends Component
     public $orderDetails;
     public $orderItems;
     public $confirmed, $preparing, $shipping, $transit, $delivered;
+    public $status;
     public function render()
     {
+
+
 
         $this->orders = Order::with('buyer')->where('user_id', '=', Auth::user()->id)->get();
         $this->orderDetails = Order::with('buyer', 'OrderItem')->where('id', '=', $this->selected_id)->get();
         return view('livewire.orders');
     }
-    public function mount()
+    public function setStatus()
     {
-        $temp = Buyer::where('user_id', '=', Auth::user()->id)->first();
-
+        $this->confirmed = null;
+        $this->preparing = null;
+        $this->shipping = null;
+        $this->transit = null;
+        $this->delivered = null;
+        $temp = Buyer::where('order_id', '=', $this->selected_id)->first();
         if ($temp->status == 'confirmed') {
             $this->confirmed = 'active';
         } elseif ($temp->status == 'preparing') {
@@ -52,7 +59,9 @@ class Orders extends Component
     }
     public function showModal($id)
     {
+
         $this->selected_id = $id;
+        $this->setStatus();
         $this->viewOrder = true;
     }
 }
