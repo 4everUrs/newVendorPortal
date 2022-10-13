@@ -31,7 +31,6 @@ Route::get('/', function () {
 });
 
 Route::get('/redirects', [LoginController::class, 'login']);
-
 Route::get('shop', Disposal::class)->name('shop');
 Route::get('home', Content::class)->name('home');
 Route::get('posting', Posting::class)->name('posting');
