@@ -29,19 +29,21 @@
             <th>View.</th>
         </thead>
         <tbody>
+           @if(!empty($orders))
             @forelse ($orders as $order)
-           
-                <tr>
-                    <td>{{$order->id}}</td>
-                    <td>{{$order->buyer->address}}</td>
-                    <td>{{$order->buyer->status}}</td>
-                    <td>
-                        <button wire:click='showModal({{$order->id}})' class="btn btn-dark btn-sm">View</button>
-                    </td>
-                </tr>
+            
+            <tr>
+                <td>{{$order->id}}</td>
+                <td>{{$order->buyer->address}}</td>
+                <td>{{$order->buyer->status}}</td>
+                <td>
+                    <button wire:click='showModal({{$order->id}})' class="btn btn-dark btn-sm">View</button>
+                </td>
+            </tr>
             @empty
-                
+            
             @endforelse
+           @endif
         </tbody>
     </table>
     <x-jet-dialog-modal wire:model="viewOrder" maxWidth="lg">
