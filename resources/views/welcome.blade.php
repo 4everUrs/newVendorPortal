@@ -51,9 +51,9 @@
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="{{route('home')}}">Home</a></li>
+                    <li><a class="nav-link scrollto" href="{{route('home')}}">Home</a></li>
                     @auth
-                        <li class="dropdown"><a href="{{route('dashboard')}}"><span>Dashboard</span></a></li>
+                        <li><a class="nav-link scrollto" href="{{route('dashboard')}}">Dashboard</a></li>
                     @endauth
                     <li class="dropdown"><a href="#"><span>About</span></a></li>
                     <li><a class="nav-link scrollto" href="{{route('posting')}}">Listing</a></li>
