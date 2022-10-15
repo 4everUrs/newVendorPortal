@@ -70,19 +70,20 @@ class Cart extends Component
     }
     public function checkout()
     {
-        Order::create([
-            'user_id' => $this->user_id,
-        ]);
-        $order_id = Order::latest()->first();
         $validatedData = $this->validate([
             'recipient' => 'required|string',
             'email' => 'required|email',
-            'phone' => 'required|integer',
+            'phone' => 'required|string',
             'address' => 'required|string',
             'status' => 'required|string',
             'user_id' => 'required|integer',
             'payment_method' => 'required|string',
         ]);
+        Order::create([
+            'user_id' => $this->user_id,
+        ]);
+        $order_id = Order::latest()->first();
+
         $validatedData['user_id'] = $this->user_id;
         $validatedData['order_id'] = $order_id->id;
         Buyer::create($validatedData);

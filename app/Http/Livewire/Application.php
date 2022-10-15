@@ -6,6 +6,8 @@ use Livewire\Component;
 
 use App\Models\Post;
 use App\Models\Bidder;
+use App\Models\MroRequest;
+use App\Models\Workshop;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use Livewire\WithFileUploads;
@@ -20,8 +22,14 @@ class Application extends Component
     public $name, $email, $phone, $bid_amount, $bid_proposal_file, $status = 'Pending', $address;
     public function render()
     {
-        $this->post = Post::find($this->selected_id);
-        return view('livewire.application')->layout('welcome');
+
+        if ($this->list_id == 'workshop') {
+            $this->post = MroRequest::find($this->selected_id);
+            return view('livewire.workshop')->layout('welcome');
+        } else {
+            $this->post = Post::find($this->selected_id);
+            return view('livewire.application')->layout('welcome');
+        }
     }
     public function mount(Request $request)
     {
@@ -53,5 +61,20 @@ class Application extends Component
         $this->phone = null;
         $this->bid_amount = null;
         $this->bid_proposal_file = null;
+        $this->address = null;
+    }
+    public function workshopApply()
+    {
+
+        $validatedData = $this->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'phone' => 'required|integer',
+            'address' => 'required|string',
+            'status' => 'required|string'
+        ]);
+        Workshop::create($validatedData);
+        sweetalert()->addSuccess('Application sent successfully');
+        $this->resetInput();
     }
 }

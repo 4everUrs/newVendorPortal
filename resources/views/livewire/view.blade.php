@@ -27,12 +27,17 @@
                     <div class="row">
                         <div class="col">
                             <h2 class="fw-bold fs-3">Description</h2>
-                            <p>{{$post->description}}</p>
+                                <p>{{$post->description}}</p>
+                                <p>{{$post->content}}</p>
+
                             <h2 class="fw-bold fs-3 mt-5">Requirements</h2>
                             <ul>
-                                @foreach ($post->PostRequirements as $posts)
+                                @if (!empty($post->requirements))
+                                    @foreach ($post->PostRequirements as $posts)
                                     <li>{{$posts->requirements}}</li>
-                                @endforeach
+                                    @endforeach
+                                @endif
+                               
                                 
                             </ul>
                         </div>
@@ -61,7 +66,7 @@
                                             href="{{route('login')}}">LOGIN</a>
                                     @endguest
                                     @auth
-                                        <button wire:click="test({{$post->id}})" class="d-inline-block px-4 py-2 rounded bg-secondary text-white align-middle">Apply Now</button>
+                                        <button wire:click="test({{$post->id}},'{{$post->type}}')" class="d-inline-block px-4 py-2 rounded bg-secondary text-white align-middle">Apply Now</button>
                                     @endauth
                                    
                                 </div>

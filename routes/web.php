@@ -35,6 +35,7 @@ Route::get('shop', Disposal::class)->name('shop');
 Route::get('home', Content::class)->name('home');
 Route::get('posting', Posting::class)->name('posting');
 Route::get('view/{list}/{id}', View::class)->name('view');
+Route::get('view/{type}/{id}', View::class)->name('workshop');
 
 Route::get('signup', Register::class)->name('signup');
 Route::post('create', [Register::class, 'create'])->name('create');
@@ -47,7 +48,7 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    Route::get('apply{id}/{list}', Application::class)->name('apply');
+    Route::get('apply/{id}/{list}', Application::class)->name('apply');
     Route::get('cart', Cart::class)->name('cart');
     Route::get('orders', Orders::class)->name('orders');
     Route::get('record', Record::class)->name('record');

@@ -73,7 +73,7 @@
         <label>Address</label>
         <input wire:model="address" class="form-control" type="text"/>
         @error('address') <span class="text-danger">{{ $message }}</span><br> @enderror
-        <label>Contact</label>
+        <label>Contact Number</label>
         <input wire:model="phone" class="form-control" type="number"/>
         @error('phone') <span class="text-danger">{{ $message }}</span><br> @enderror
         <label>Payment Method</label>

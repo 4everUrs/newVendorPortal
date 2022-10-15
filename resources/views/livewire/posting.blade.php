@@ -38,6 +38,31 @@
                         </div>
                     </div>
                     @endforeach
+
+                    @foreach ($workshops as $workshop)
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <table class="table">
+                                <tr>
+                                    <td style="width: 10%">
+                                        <img src="{{asset('dashboardPage/assets/img/logz.png')}}" class="rounded-circle d-block" width="100"
+                                            height="100">
+                                    </td>
+                                    <td>
+                                        <h3>Looking for: {{$workshop->type}}</h3>
+                                        <p>{{$workshop->content}}</p>
+                                        <div class="d-flex align-items-center flex-wrap justify-content-start gap-3 ">
+                                            <div><i class="fa-solid fa-location-dot"></i> {{$workshop->location}}</div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center align-middle">
+                                        <button class="btn btn-dark" wire:click="workshopApply({{$workshop->id}},'{{$workshop->type}}')">View</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

@@ -46,12 +46,12 @@
 
             <div class="logo me-auto">
 
-                <a href="index.html"><img src="{{asset('welcomePage/assets/img/logo-full.png')}}" alt="" class="img-fluid"></a>
+                <a href="{{route('home')}}"><img src="{{asset('welcomePage/assets/img/logo-full.png')}}" alt="" class="img-fluid"></a>
             </div>
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a class="nav-link scrollto" href="{{route('home')}}">Home</a></li>
+                   
                     @auth
                         <li><a class="nav-link scrollto" href="{{route('dashboard')}}">Dashboard</a></li>
                     @endauth
