@@ -32,7 +32,7 @@
 
                             <h2 class="fw-bold fs-3 mt-5">Requirements</h2>
                             <ul>
-                                @if (!empty($post->requirements))
+                                @if (!empty($post->PostRequirements))
                                     @foreach ($post->PostRequirements as $posts)
                                     <li>{{$posts->requirements}}</li>
                                     @endforeach

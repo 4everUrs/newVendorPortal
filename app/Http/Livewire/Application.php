@@ -53,6 +53,7 @@ class Application extends Component
         Bidder::create($validatedData);
         sweetalert()->addSuccess('Application sent successfully');
         $this->resetInput();
+        return redirect()->route('posting');
     }
     public function resetInput()
     {

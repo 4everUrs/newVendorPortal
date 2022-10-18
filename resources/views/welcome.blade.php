@@ -53,7 +53,7 @@
                 <ul>
                    
                     @auth
-                        <li><a class="nav-link scrollto" href="{{route('dashboard')}}">Dashboard</a></li>
+                        <li><a class="nav-link scrollto" href="{{route('dashboard')}}">{{Auth::user()->name}}</a></li>
                     @endauth
                     <li class="dropdown"><a href="#"><span>About</span></a></li>
                     <li><a class="nav-link scrollto" href="{{route('posting')}}">Listing</a></li>

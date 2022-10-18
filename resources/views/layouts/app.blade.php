@@ -30,7 +30,7 @@
        <div class="wrapper ">
             <div class="sidebar" data-color="white" data-active-color="danger">
                 <div class="logo">
-                    <a href="{{route('dashboard')}}" class="simple-text logo-normal">
+                    <a href="{{route('home')}}" class="simple-text logo-normal">
                         <div class="logo-image-big">
                             <img src="{{asset('dashboardPage/assets/img/logo-full.png')}}"width="120px">
                         </div>
@@ -83,7 +83,7 @@
                                     <span class="navbar-toggler-bar bar3"></span>
                                 </button>
                             </div>
-                            <a class="navbar-brand" href="{{route('home')}}">Home</a>
+                           
                         </div>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
                             aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,6 +91,7 @@
                             <span class="navbar-toggler-bar navbar-kebab"></span>
                             <span class="navbar-toggler-bar navbar-kebab"></span>
                         </button>
+                        
                         <div class="collapse navbar-collapse justify-content-end" id="navigation">
                             <ul class="navbar-nav">
                                 <li class="nav-item btn-rotate">
