@@ -9,6 +9,7 @@ use Livewire\Component;
 
 class Register extends Component
 {
+
     public function render()
     {
 
@@ -16,20 +17,15 @@ class Register extends Component
     }
     public function create(Request $request)
     {
-        // $data = $this->validate($request, [
-        //     'name' => 'required|string',
-        //     'email' => 'required|email',
-        //     'phone' => 'required"integer',
-        //     'password' => 'required|confirmed',
-        //     'current_team_id' => 'required',
-        //     'role_id' => 'required'
-        // ]);
+        $password = $request->validate([
+            'password' => 'required|confirmed'
+        ]);
         $data = new User;
         $data->name = $request->name;
         $data->email = $request->email;
         $data->username = $request->username;
         $data->phone = $request->phone;
-        $data->password = Hash::make($request->password);
+        $data->password = Hash::make($request['password']);
         $data->current_team_id = '38';
         $data->role_id = '3';
         $data->type = 'Client';

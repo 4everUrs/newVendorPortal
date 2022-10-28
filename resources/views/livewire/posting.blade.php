@@ -24,7 +24,9 @@
                                     </td>
                                     <td>
                                         <h3>Looking for: {{$post->type}}</h3>
-                                        <p>{{$post->description}}</p>
+                                        <p>Item Name: {{$post->item_name}}</p>
+                                        <p>Quantity: {{$post->quantity}}</p>
+                                        <p>Description: {{$post->description}}</p>
                                         <div class="d-flex align-items-center flex-wrap justify-content-start gap-3 ">
                                             <div><i class="fa-solid fa-location-dot"></i> {{$post->location}}</div>
                                             <div><i class="fa-solid fa-dollar-sign"></i> @money($post->start) - @money($post->end)</div>

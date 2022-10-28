@@ -24,7 +24,7 @@
         @livewireStyles
 
         <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script>
+        
     </head>
     <body class="font-sans antialiased bg-light">
        <div class="wrapper ">
@@ -37,8 +37,8 @@
                     </a>
                 </div>
                 <div class="sidebar-wrapper">
-                    <ul class="nav">
-                        <li>
+                    <ul class="nav nav-sidebar">
+                        <li class="menu">
                             <a href="{{route('dashboard')}}">
                                 <i class="nc-icon nc-tile-56"></i>
                                 <p>Dashboard</p>
@@ -120,15 +120,24 @@
             </div>
         </div>
         
-        @include('sweetalert::alert')
-        @stack('modals')
-
-        @livewireScripts
-
-        @stack('scripts')
+       
 
         <script src="{{asset('dashboardPage/assets/js/core/jquery.min.js')}}"></script>
-       
+        <script type="text/javascript">
+           var url = window.location;
+            
+            // for sidebar menu entirely but not cover treeview
+            $('ul.nav-sidebar a').filter(function() {
+            return this.href == url;
+            }).addClass('active');
+        </script>
+       <script src="{{ mix('js/app.js') }}" defer></script>
+       @include('sweetalert::alert')
+        @stack('modals')
+        
+        @livewireScripts
+        
+        @stack('scripts')
         <script src="{{asset('dashboardPage/assets/js/core/popper.min.js')}}"></script>
         <script src="{{asset('dashboardPage/assets/js/core/bootstrap.min.js')}}"></script>
         <script src="{{asset('dashboardPage/assets/js/plugins/perfect-scrollbar.jquery.min.js')}}"></script>

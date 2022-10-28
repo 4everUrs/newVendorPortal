@@ -46,10 +46,18 @@
                 <div class="col-4">
                     <div class="row p-4 border border-secondary rounded">
                         <div class="col">
-                            <h3 class="fw-bold fs-4">Job Overview</h3>
+                            <h3 class="fw-bold fs-4">List Overview</h3>
                             <div class="row mb-2">
                                 <div class="col-6">Posted Date:</div>
                                 <div class="col-6 text-end">{{Carbon\Carbon::parse($post->created_at)->toFormattedDateString()}}</div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-6">Item Name:</div>
+                                <div class="col-6 text-end">{{$post->item_name}}</div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-6">Quantity:</div>
+                                <div class="col-6 text-end">{{$post->quantity}}</div>
                             </div>
                             <div class="row mb-2">
                                 <div class="col-6">Location:</div>

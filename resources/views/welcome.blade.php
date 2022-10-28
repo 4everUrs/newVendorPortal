@@ -60,6 +60,7 @@
                     <li><a class="nav-link scrollto " href="{{route('shop')}}">Shop</a></li>
                     @guest
                         <form action="{{route('login')}}">
+                           
                             <button type="submit" class="btn btn-primary mx-3">LOGIN</button>
                         </form>
                     @endguest
@@ -85,13 +86,7 @@
     <div class="main-content">
         {{$slot}}
     </div>
-    @include('sweetalert::alert')
-    @stack('modals')
     
-    @livewireScripts
-    
-    @stack('scripts')
-    <script src="{{ mix('js/app.js') }}" defer></script>
     <!-- ======= Footer ======= -->
     <footer id="footer">
         <div class="container">
@@ -114,6 +109,21 @@
             class="bi bi-arrow-up-short"></i></a>
             
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $('ul li a').click(function(){
+        $('li a').removeClass("active");
+        $(this).addClass("active");
+        });
+        });
+    </script>
+    @include('sweetalert::alert')
+    @stack('modals')
+    
+    @livewireScripts
+    
+    @stack('scripts')
+    <script src="{{ mix('js/app.js') }}" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>   
     <!-- Vendor JS Files -->

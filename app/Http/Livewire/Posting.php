@@ -8,15 +8,15 @@ use App\Models\Post;
 
 class Posting extends Component
 {
-    public $posts;
     public $workshops;
     public $post_id;
     public function render()
     {
 
-        $this->posts = Post::all();
         $this->workshops = MroRequest::all();
-        return view('livewire.posting')->layout('welcome');
+        return view('livewire.posting', [
+            'posts' => Post::orderBy('id', 'desc')->get()
+        ])->layout('welcome');
     }
     public function workshopApply($id, $type)
     {

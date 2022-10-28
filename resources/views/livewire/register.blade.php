@@ -59,6 +59,7 @@
     
                                 <x-jet-input class="form-control" type="password" name="password_confirmation" required
                                     autocomplete="new-password" />
+                                    <x-jet-input-error for="password_confirmation"></x-jet-input-error>
                             </div>
                             
                             <div class="form-group">

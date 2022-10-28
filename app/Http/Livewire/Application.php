@@ -9,6 +9,7 @@ use App\Models\Bidder;
 use App\Models\MroRequest;
 use App\Models\Workshop;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use Livewire\WithFileUploads;
 
@@ -40,7 +41,7 @@ class Application extends Component
     {
         $validatedData = $this->validate([
             'name' => 'required|string',
-            'email' => 'required|string',
+            'email' => 'required|email',
             'phone' => 'required|string',
             'bid_amount' => 'required|integer',
             'address' => 'required|string',
@@ -50,6 +51,7 @@ class Application extends Component
             $validatedData['bid_proposal_file'] = $this->bid_proposal_file->store('bid_file', 'do');
         }
         $validatedData['post_id'] = $this->list_id;
+        $validatedData['user_id'] = Auth::user()->id;
         Bidder::create($validatedData);
         sweetalert()->addSuccess('Application sent successfully');
         $this->resetInput();
