@@ -17,7 +17,7 @@
                                 </div>
                                 <div class="col-7">
                                     <div class="numbers lh-sm text-end">
-                                        <p class="mb-0 fs-6">Capacity</p> 105GB </div>
+                                        <p class="mb-0 fs-6">Orders</p> 0 </div>
                                 </div>
                             </div>
                             <div class="footer p-0">
@@ -36,7 +36,7 @@
                                 </div>
                                 <div class="col-7">
                                     <div class="numbers lh-sm text-end">
-                                        <p class="mb-0 fs-6">Revenue</p> $1,345 </div>
+                                        <p class="mb-0 fs-6">Application</p> 0 </div>
                                 </div>
                             </div>
                             <div class="footer p-0">

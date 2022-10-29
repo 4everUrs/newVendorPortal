@@ -21,31 +21,37 @@
         #ffffff;background-color: #ff2b00;border-color: #ff2b00;border-radius: 1px}
     </style>
     <h2>Order Tracking</h2>
-    <table class="table table-striped table-hovered">
-        <thead>
-            <th>Order ID No.</th>
-            <th>Delivery Address.</th>
-            <th>Status.</th>
-            <th>View.</th>
-        </thead>
-        <tbody>
-           @if(!empty($orders))
-            @forelse ($orders as $order)
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-striped table-hovered">
+                <thead>
+                    <th>Order ID No.</th>
+                    <th>Delivery Address.</th>
+                    <th>Status.</th>
+                    <th>View.</th>
+                </thead>
+                <tbody>
+                    @if(!empty($orders))
+                    @forelse ($orders as $order)
             
-            <tr>
-                <td>{{$order->id}}</td>
-                <td>{{$order->buyer->address}}</td>
-                <td>{{$order->buyer->status}}</td>
-                <td>
-                    <button wire:click='showModal({{$order->id}})' class="btn btn-dark btn-sm">View</button>
-                </td>
-            </tr>
-            @empty
-            
-            @endforelse
-           @endif
-        </tbody>
-    </table>
+                    <tr>
+                        <td>{{$order->id}}</td>
+                        <td>{{$order->buyer->address}}</td>
+                        <td>{{$order->buyer->status}}</td>
+                        <td>
+                            <button wire:click='showModal({{$order->id}})' class="btn btn-dark btn-sm">View</button>
+                        </td>
+                    </tr>
+                    @empty
+                        <tr>
+                            <td colspan="4" class="text-center">No Orders Found</td>
+                        </tr>
+                    @endforelse
+                    @endif
+                </tbody>
+            </table>
+        </div>
+    </div>
     <x-jet-dialog-modal wire:model="viewOrder" maxWidth="lg">
         <x-slot name="title">
             {{__('Tech-Trendz Services')}}

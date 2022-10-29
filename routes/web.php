@@ -1,6 +1,7 @@
 <?php
 
 use App\Actions\Fortify\CreateNewUser;
+use App\Http\Controllers\InquiryMailController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterUserController;
 use Illuminate\Support\Facades\Route;
@@ -11,6 +12,7 @@ use App\Http\Livewire\Posting;
 use App\Http\Livewire\View;
 use App\Http\Livewire\Record;
 use App\Http\Livewire\Application;
+use App\Http\Livewire\Invoice;
 use App\Http\Livewire\Orders;
 use App\Http\Livewire\Register;
 use Carbon\Carbon;
@@ -29,6 +31,8 @@ use Carbon\Carbon;
 Route::get('/', function () {
     return redirect('/home');
 });
+
+Route::post('/send-mail', [InquiryMailController::class, 'sendMail'])->name('send');
 
 Route::get('/redirects', [LoginController::class, 'login']);
 Route::get('shop', Disposal::class)->name('shop');
@@ -52,4 +56,5 @@ Route::middleware([
     Route::get('cart', Cart::class)->name('cart');
     Route::get('orders', Orders::class)->name('orders');
     Route::get('record', Record::class)->name('record');
+    Route::get('invoice', Invoice::class)->name('invoice');
 });

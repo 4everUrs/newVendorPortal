@@ -55,7 +55,7 @@
                     @auth
                         <li><a class="nav-link scrollto" href="{{route('dashboard')}}">{{Auth::user()->name}}</a></li>
                     @endauth
-                    <li class="dropdown"><a href="#"><span>About</span></a></li>
+                    <li class="dropdown"><a href="#contact"><span>Contact us</span></a></li>
                     <li><a class="nav-link scrollto" href="{{route('posting')}}">Listing</a></li>
                     <li><a class="nav-link scrollto " href="{{route('shop')}}">Shop</a></li>
                     @guest

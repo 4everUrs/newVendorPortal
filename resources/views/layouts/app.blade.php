@@ -63,7 +63,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:;">
+                            <a href="{{route('invoice')}}">
                                 <i class="nc-icon nc-pin-3"></i>
                                 <p>Invoices</p>
                             </a>

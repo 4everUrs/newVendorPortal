@@ -159,26 +159,27 @@
                             <div class="address">
                                 <i class="bi bi-geo-alt"></i>
                                 <h4>Location:</h4>
-                                <p>A108 Adam Street, New York, NY 535022</p>
+                                <p>Novalichez Quezon City</p>
                             </div>
     
                             <div class="email">
                                 <i class="bi bi-envelope"></i>
                                 <h4>Email:</h4>
-                                <p>info@example.com</p>
+                                <p>admin@techtrendzph.com</p>
                             </div>
     
                             <div class="phone">
                                 <i class="bi bi-phone"></i>
                                 <h4>Call:</h4>
-                                <p>+1 5589 55488 55s</p>
+                                <p>(02)123-4567</p>
                             </div>
                         </div>
     
                     </div>
     
                     <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-left">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <form action="{{route('send')}}" method="post" role="form" class="php-email-form">
+                            @csrf
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="name">Your Name</label>
