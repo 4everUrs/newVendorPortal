@@ -29,6 +29,7 @@ class Register extends Component
         $data->current_team_id = '38';
         $data->role_id = '3';
         $data->type = 'Client';
+        $data->status = 'Active';
         $data->save();
         toastr()->addSuccess('Account Register Successfully');
         return redirect()->route('login');

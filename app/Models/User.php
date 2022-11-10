@@ -30,7 +30,8 @@ class User extends Authenticatable
         'username',
         'current_team_id',
         'role_id',
-        'phone'
+        'phone',
+        'status',
     ];
 
     /**

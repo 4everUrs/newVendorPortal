@@ -29,7 +29,8 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">{{$item->item_name}}</h5>
                                     <!-- Product price-->
-                                    @money($item->amount)
+                                    @money($item->amount)<br>
+                                    <small>Stock:{{$item->stocks - $item->sold}}</small>
                                 </div>
                             </div>
                             <!-- Product actions-->

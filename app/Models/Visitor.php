@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Invoice extends Model
+class Visitor extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'company_name', 'file_name', 'user_id', 'invoice_id', 'status'
+        'ip', 'user_agent', 'month', 'year'
     ];
 }
