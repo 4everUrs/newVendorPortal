@@ -12,6 +12,7 @@ use App\Http\Livewire\Posting;
 use App\Http\Livewire\View;
 use App\Http\Livewire\Record;
 use App\Http\Livewire\Application;
+use App\Http\Livewire\ApplicationRecords;
 use App\Http\Livewire\Invoice;
 use App\Http\Livewire\Orders;
 use App\Http\Livewire\Register;
@@ -57,4 +58,5 @@ Route::middleware([
     Route::get('orders', Orders::class)->name('orders');
     Route::get('record', Record::class)->name('record');
     Route::get('invoice', Invoice::class)->name('invoice');
+    Route::get('applications', ApplicationRecords::class)->name('applications');
 });

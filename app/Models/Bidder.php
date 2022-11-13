@@ -9,6 +9,10 @@ class Bidder extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name', 'email', 'phone', 'bid_amount', 'bid_proposal_file', 'status', 'address', 'post_id', 'user_id'
+        'name', 'email', 'phone', 'bid_amount', 'bid_proposal_file', 'status', 'address', 'post_id', 'user_id', 'invoice_id'
     ];
+    public function Post()
+    {
+        return $this->belongsTo(Post::class);
+    }
 }

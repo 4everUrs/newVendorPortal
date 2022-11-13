@@ -57,17 +57,23 @@
                             </a>
                         </li>
                         <li>
+                            <a href="{{route('applications')}}">
+                                <i class="nc-icon nc-pin-3"></i>
+                                <p>Application</p>
+                            </a>
+                        </li>
+                        <li>
                             <a href="{{route('record')}}">
                                 <i class="nc-icon nc-pin-3"></i>
                                 <p>Purchase Orders</p>
                             </a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="{{route('invoice')}}">
                                 <i class="nc-icon nc-pin-3"></i>
                                 <p>Invoices</p>
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
             </div>

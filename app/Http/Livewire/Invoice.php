@@ -25,8 +25,8 @@ class Invoice extends Component
             'company_name' => 'required|string'
         ]);
         $validateData['user_id'] = Auth::user()->id;
-        $validateData['invoice_id'] = rand(1000, 5000);
-        $validateData['file_name'] = $this->file_name->storeAs('invoices', $originalFileName, 'do');
+        $validateData['order_id'] = rand(1000, 5000);
+        $validateData['file_name'] = $this->file_name->storeAs('', $originalFileName, 'do');
         $validateData['status'] = 'Pending';
         ModelsInvoice::create($validateData);
         toastr()->addSuccess('Send Successfully');
